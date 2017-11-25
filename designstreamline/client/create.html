@@ -1,0 +1,75 @@
+<template name="create">
+
+	<div class="marginTop" id="searchContainer">
+		
+		<form class="createProject">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="seasonName">Season Name</label>
+      <input type="text" class="form-control" id="seasonName" placeholder="Name" name="seasonName">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lifeCycle">Life Cycle</label>
+      <input type="text" class="form-control" id="lifeCycle" placeholder="Life Cycle" name="lifeCycle">
+    </div>
+  </div>
+   <div>
+     <div class="form-group">
+	    <label for="features">Features</label>
+	    <textarea class="form-control" id="features" rows="3" placeholder="Feature 1; Feature 2" name="features"></textarea>
+	  </div>
+  </div>
+   <div>
+     <div class="form-group">
+	    <label for="components">Components</label>
+	    <textarea class="form-control" id="components" rows="3" placeholder="Component 1; Component 2" name="components"></textarea>
+	  </div>
+  </div>
+  <div>
+     <div class="form-group">
+	    <label for="projectDescription">Project Description</label>
+	    <textarea class="form-control" id="projectDescription" rows="3" placeholder="Description"></textarea>
+	  </div>
+  </div>
+
+  <div>
+     <div class="form-group">
+	  	<label class="mr-sm-2" for="productCategory">Product Category</label>
+	  	<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="productCategory">
+		    <option selected>Choose...</option>
+		    <option value="1">Category 1</option>
+		    <option value="2">Category 2</option>
+		    <option value="3">Category 3</option>
+		  </select>
+	  </div>
+  </div>
+ 
+
+  
+
+  
+
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Design</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary">Create Project</button>
+</form>
+
+	</div>
+
+	
+</template>
+
+
+<!-- 
+
+	product category: use dropdown
+	stage of project
+
+
+	unit sold
+
+ -->
