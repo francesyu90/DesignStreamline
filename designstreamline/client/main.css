@@ -1,9 +1,10 @@
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+html {
+  position: relative;
+  min-height: 100%;
 }
+
 #footer {
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -24,7 +25,18 @@ footer {
   margin-top: 50px;
 }
 
+.marginTopII {
+  margin-top: 500px;
+}
+
 #body {
 	margin-left: 100px;
 	margin-right: 100px;
 }
+
+.margin-left-right {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+

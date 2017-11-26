@@ -2,7 +2,23 @@
 
 	<div class="marginTop" id="addContainer">
 		
-		<form class="createProject">
+		{{> add}}
+
+	</div>
+
+	
+</template>
+
+
+<template name="add">
+  
+</template>
+
+
+
+<template name="oldCreate">
+  
+  <form class="createProject">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="seasonName">Season Name</label>
@@ -15,27 +31,27 @@
   </div>
   <div>
      <div class="form-group">
-	    <label for="products">Product</label>
-	    <textarea class="form-control" id="products" rows="3" placeholder="Product 1; Product 2" name="products"></textarea>
-	  </div>
+      <label for="products">Product</label>
+      <textarea class="form-control" id="products" rows="3" placeholder="Product 1; Product 2" name="products"></textarea>
+    </div>
   </div>
    <div>
      <div class="form-group">
-	    <label for="features">Features</label>
-	    <textarea class="form-control" id="features" rows="3" placeholder="Feature 1; Feature 2" name="features"></textarea>
-	  </div>
+      <label for="features">Features</label>
+      <textarea class="form-control" id="features" rows="3" placeholder="Feature 1; Feature 2" name="features"></textarea>
+    </div>
   </div>
    <div>
      <div class="form-group">
-	    <label for="components">Components</label>
-	    <textarea class="form-control" id="components" rows="3" placeholder="Component 1; Component 2" name="components"></textarea>
-	  </div>
+      <label for="components">Components</label>
+      <textarea class="form-control" id="components" rows="3" placeholder="Component 1; Component 2" name="components"></textarea>
+    </div>
   </div>
   <div>
      <div class="form-group">
-	    <label for="projectDescription">Project Description</label>
-	    <textarea class="form-control" id="projectDescription" rows="3" placeholder="Description"></textarea>
-	  </div>
+      <label for="projectDescription">Project Description</label>
+      <textarea class="form-control" id="projectDescription" rows="3" placeholder="Description"></textarea>
+    </div>
   </div>
   
 
@@ -48,18 +64,4 @@
   <button type="submit" class="btn btn-primary">Create Project</button>
 </form>
 
-	</div>
-
-	
 </template>
-
-
-<!-- 
-
-	product category: use dropdown
-	stage of project
-
-
-	unit sold
-
- -->
