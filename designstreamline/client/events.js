@@ -60,7 +60,6 @@ Template.navbar.events({
 Template.createFeature.events({
 
 	'submit .js-create-feature'(event, instance) {
-		event.preventDefault();
 		var featureName = event.target.featureName.value;
 		var feature = {
 			"name": featureName
@@ -68,6 +67,31 @@ Template.createFeature.events({
 		var featureID = Features.insert(feature);
 		if(featureID) {
 			alert("Feature " + featureName + " successfully inserted!");
+		}
+	}
+
+});
+
+Template.createComponent.events({
+
+	'change #riskPicker'(event, instance) {
+		var componentRiskValue = event.target.value;
+		Session.set("componentRiskValue", componentRiskValue);
+	},
+
+	'submit .js-create-component'(event, instance) {
+		event.preventDefault();
+		var componentName = event.target.componentName.value;
+		var imageUrl = event.target.imageUrl.value;
+		var componentRiskValue = Session.get("componentRiskValue");
+		var component = {
+			"name": componentName,
+			"url": imageUrl,
+			"risk": componentRiskValue
+		}
+		var componentID = Components.insert(component);
+		if(componentID) {
+			alert("Component " + componentName + " successfully inserted!");
 		}
 	}
 
