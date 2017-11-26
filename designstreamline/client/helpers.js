@@ -79,6 +79,10 @@ Template.gallery.helpers({
 			"lifeCycle": selectedLifeCycle
 		});
 
+		if(!project) {
+			return;
+		}
+
 		var productKeys = project.productIDs;
 
 		return Products.find({
@@ -158,10 +162,10 @@ Template.components.helpers({
 			return;
 		}
 		var componentIDs = Session.get("selectedProduct").componentIDs;
-		if(!componentIDs) 
+		if(!componentIDs || componentIDs.length < 1) 
 			return;
-		return Features.find({
-			"_id": {$in: Object.values(componentIDs)}
+		return Components.find({
+			"_id": {$in: componentIDs}
 		});
 	}
 
