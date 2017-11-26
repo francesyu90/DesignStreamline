@@ -115,15 +115,50 @@ Template.createProduct.helpers({
 
 });
 
-var getRisks = function() {
-	var risks = ["low", "middle", "high"];
-		var riskObjs = [];
-		for(var i = 0; i < risks.length; i++) {
-			var risk = {
-				"level": risks[i]
-			}
-			riskObjs.push(risk);
+Template.createProject.helpers({
+
+	'lifeCycles': function() {
+		return getLifeCycles();
+	},
+
+	'products': function() {
+		return Products.find({
+			"productName": {$exists: true, $ne: ""}
+		});
+	},
+
+	'risks': function() {
+		return getRisks();
+	}
+
+
+});
+
+var getLifeCycles = function() {
+	var lifeCycles = ["Design", "Development", "Production"];
+	var lifeCycleValues = ["des", "dev", "prod"];
+	var lifeCycleObjs = [];
+	for (var i = 0; i < lifeCycles.length; i++) {
+		var lifeCycle = {
+			"value": lifeCycleValues[i],
+			"status":lifeCycles[i]
 		}
-		return riskObjs;
+		lifeCycleObjs.push(lifeCycle);
+	}
+	return lifeCycleObjs;
+}
+
+var getRisks = function() {
+	var risks = ["Low", "Middle", "High"];
+	var riskValues = ["low", "middle", "high"];
+	var riskObjs = [];
+	for(var i = 0; i < risks.length; i++) {
+		var risk = {
+			"value": riskValues[i],
+			"level": risks[i]
+		}
+		riskObjs.push(risk);
+	}
+	return riskObjs;
 }
 
