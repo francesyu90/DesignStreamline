@@ -1,7 +1,6 @@
 Template.create.events({
 
     'submit .createProject'(event, instance) {
-    	event.preventDefault();
 	   	var seasonName = event.target.seasonName.value;
 	   	var lifeCycle = event.target.lifeCycle.value;
 	   	var re = /\s*;\s*/;
@@ -70,4 +69,22 @@ Template.create.events({
 	   	}
 
 	}
+});
+
+
+Template.form.events({
+
+	'change #projectPicker'(event, instance) {
+		event.preventDefault();
+	   	var selectedProject = event.target.value;
+	   	if(selectedProject != "") {
+	   		Session.set("selectedProject", selectedProject);
+    		Session.set("hideLifeCyclePicker", false);
+	   	} else {
+	   		Session.set("selectedProject", null);
+    		Session.set("hideLifeCyclePicker", true);
+	   	}
+    	
+	}
+
 });

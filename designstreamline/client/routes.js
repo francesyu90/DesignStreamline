@@ -46,3 +46,16 @@ Router.route("/search",function (){
 		to:"footer"
 	});
 });
+
+Router.route("/test",function (){
+	this.render("navbar",{
+		to:"navbar"
+	});
+	this.render("test",{
+		to:"main"
+	});
+	this.render("footer",{
+		to:"footer"
+	});
+});
+

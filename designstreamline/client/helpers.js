@@ -45,3 +45,15 @@ Template.catalog.helpers({
 	}
 
 });
+
+Template.form.helpers({
+
+	'projects': function() {
+		return Projects.find( {"seasonName": {$exists: true, $ne: ""}} );
+	},
+
+	'hideLifeCyclePicker': function() {
+		return Session.get("hideLifeCyclePicker");
+	}
+
+});
