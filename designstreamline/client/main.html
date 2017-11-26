@@ -11,11 +11,11 @@
 
 
 <template name="ApplicationLayout">
-  <div id="body">
-    {{> yield "navbar"}}
-  {{> yield "main"}}
+  {{> yield "navbar"}}
+    <div id="body">
+       {{> yield "main"}}
+    </div>
   {{> yield "footer"}}
-  </div>
 </template>
 
 <!-- <template name="hello">
