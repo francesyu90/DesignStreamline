@@ -164,8 +164,8 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-10">
-    <label for="productPicker">Products</label>
-    <select multiple class="form-control" id="productPicker" name="productPicker">
+    <label for="productMulPicker">Products</label>
+    <select multiple class="form-control" id="productMulPicker" name="productMulPicker">
       <option selected>Choose...</option>
       {{#each products}}
           <option value="{{ _id }}">{{ productName }}</option>
@@ -175,8 +175,8 @@
   </div>
   <div class="form-row">
      <div class="form-group col-md-2">
-      <label for="lifeCycle">Life Cycle</label>
-      <select id="lifeCycle" class="form-control">
+      <label for="lifeCyclePicker">Life Cycle</label>
+      <select id="lifeCyclePicker" class="form-control">
         <option selected>Choose...</option>
         {{#each lifeCycles}}
           <option value="{{ value }}">{{ status }}</option>

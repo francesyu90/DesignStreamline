@@ -8,3 +8,7 @@ Session.set("componentRiskValue", null);
 Session.set("selectedFeatureIDs", null);
 Session.set("selectedComponentIDs", null);
 Session.set("productRiskValue", null);
+
+Session.set("selectedProductIDs", null);
+Session.set("selectedLifeCycleI", null);
+Session.set("projectRiskValue", null);

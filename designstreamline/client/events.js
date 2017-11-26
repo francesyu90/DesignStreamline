@@ -49,10 +49,8 @@ Template.pill.events({
 Template.navbar.events({
 
 	'click .nav-item'(event, instance) {
-		if(!$(this).hasClass('active')) {
-			$(this).addClass('active');
-			$(this).siblings.removeClass('active');
-		} 
+		$(".nav-item").removeClass('active');
+		$(this).addClass('active');
 	}
 
 });
@@ -100,12 +98,12 @@ Template.createComponent.events({
 Template.createProduct.events({
 
 	'change #featureMulPicker'(event, instance) {
-		var selectedFeatures = event.target.value;
+		var selectedFeatures = $("#featureMulPicker").val();
 		Session.set("selectedFeatureIDs", selectedFeatures);
 	},
 
 	'change #componentMulPicker'(event, instance) {
-		var selectedComponents = event.target.value;
+		var selectedComponents = $("#componentMulPicker").val();
 		Session.set("selectedComponentIDs", selectedComponents);
 	},
 
@@ -121,7 +119,7 @@ Template.createProduct.events({
 		var selectedComponentIDs = Session.get("selectedComponentIDs");
 		var productRiskValue = Session.get("productRiskValue");
 		var product = {
-			"name": productName,
+			"productName": productName,
 			"url": productImageUrl,
 			"featureIDs": selectedFeatureIDs,
 			"componentIDs": selectedComponentIDs,
@@ -130,6 +128,42 @@ Template.createProduct.events({
 		var productID = Products.insert(product);
 		if(productID) {
 			alert("Product " + productName + " successfully inserted!");
+		}
+	}
+
+});
+
+Template.createProject.events({
+
+	'change #productMulPicker'(event, instance) {
+		var productIDs = $("#productMulPicker").val();
+		Session.set("selectedProductIDs", productIDs);
+	},
+
+	'change #lifeCyclePicker'(event, instance) {
+		var lifeCycle = event.target.value;
+		Session.set("selectedLifeCycleI", lifeCycle);
+	},
+
+	'change #projectRiskPicker'(event, instance) {
+		var projectRiskValue = event.target.value;
+		Session.set("projectRiskValue", projectRiskValue);
+	},
+
+	'submit .js-create-project'(event, instance) {
+		var seasonName = event.target.seasonName.value;
+		var productIDs = Session.get("selectedProductIDs");
+		var lifeCycle = Session.get("selectedLifeCycleI");
+		var projectRiskValue = Session.get("projectRiskValue");
+		var project = {
+			"seasonName": seasonName,
+			"productIDs": productIDs,
+			"lifeCycle": lifeCycle,
+			"risk": projectRiskValue
+		}
+		var projectID = Projects.insert(project);
+		if(projectID) {
+			alert("Project " + seasonName + " successfully inserted!");
 		}
 	}
 
