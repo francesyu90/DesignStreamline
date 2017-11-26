@@ -56,16 +56,19 @@
 <template name="createComponent">
  <form class="js-create-component">
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-10">
       <label for="componentName">Name</label>
       <input type="text" class="form-control" id="componentName" placeholder="Name" name="componentName">
     </div>
   </div>
- <div class="form-group">
+<div class="form-row">
+   <div class="form-group col-md-10">
       <label for="imageUrl">Image Url</label>
       <textarea class="form-control" id="imageUrl" rows="3" placeholder="Place image url here... "></textarea>
     </div>
-    <div class="form-group">
+</div>
+    <div class="form-row">
+      <div class="form-group col-md-10">
     <label for="riskPicker">Risk</label>
     <select class="form-control" id="riskPicker" name="riskPicker">
       <option value="">Choose... </option>
@@ -74,9 +77,12 @@
       {{/each}}
     </select>
   </div>
-  <div class="form-group">
+    </div>
+  <div class="form-row">
+    <div class="form-group col-md-10">
     <label for="componentImage">Upload Design</label>
     <input type="file" class="form-control-file" id="componentImage" disabled>
+  </div>
   </div>
   <button type="submit" class="btn btn-primary">Create Component</button>
 </form>
@@ -95,7 +101,33 @@
 </template>
 
 <template name="createProduct">
-  Product
+  <form class="js-create-product">
+  <div class="form-row">
+    <div class="form-group col-md-10">
+      <label for="productName">Product Name</label>
+      <input type="text" class="form-control" id="productName" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-row">
+   <div class="form-group col-md-10">
+      <label for="productImageUrl">Image Url</label>
+      <textarea class="form-control" id="productImageUrl" rows="3" placeholder="Place image url here... "></textarea>
+    </div>
+</div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+    <label for="featureMulPicker">Features</label>
+    <select multiple class="form-control" id="featureMulPicker">
+      <option value="">Choose...</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Product</button>
+</form>
 </template>
 
 <template name="createProject">
