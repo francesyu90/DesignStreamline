@@ -1,18 +1,13 @@
 // Reviews = new Mongo.Collection("reviews");
 
 Projects = new Mongo.Collection("projects");
-/*
-	-	season name [move to new table in the future]
-	-	status(life cycle)
-*/
+//	seasonName, productIDs, lifeCycle, risk
 
 Products = new Mongo.Collection("products");
-/*
-	-	
-*/
+//	productName, url, featureIDs, componentIDs, risk
 
 Features = new Mongo.Collection("features");
+//	name
 
 Components = new Mongo.Collection("components");
-
-SeasonNames = new Mongo.Collection("seasonNames");
+//	componentName, url, risk

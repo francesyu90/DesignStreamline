@@ -82,7 +82,7 @@ Template.createComponent.events({
 		var imageUrl = event.target.imageUrl.value;
 		var componentRiskValue = Session.get("componentRiskValue");
 		var component = {
-			"name": componentName,
+			"componentName": componentName,
 			"url": imageUrl,
 			"risk": componentRiskValue
 		}
