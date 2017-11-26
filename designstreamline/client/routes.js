@@ -47,11 +47,11 @@ Router.route("/search",function (){
 	});
 });
 
-Router.route("/test",function (){
+Router.route("/projectCatalog",function (){
 	this.render("navbar",{
 		to:"navbar"
 	});
-	this.render("test",{
+	this.render("projectCatalog",{
 		to:"main"
 	});
 	this.render("footer",{

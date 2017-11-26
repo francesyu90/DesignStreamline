@@ -75,7 +75,6 @@ Template.create.events({
 Template.form.events({
 
 	'change #projectPicker'(event, instance) {
-		event.preventDefault();
 	   	var selectedProject = event.target.value;
 	   	if(selectedProject != "") {
 	   		Session.set("selectedProject", selectedProject);
@@ -83,8 +82,26 @@ Template.form.events({
 	   	} else {
 	   		Session.set("selectedProject", null);
     		Session.set("hideLifeCyclePicker", true);
+    		Session.set("selectedLifeCycle", null);
+    		Session.set("hideGallery", true);
+	   	}
+    	
+	},
+
+	'change #lifeCyclePicker'(event, instance) {
+	   	var selectedLifeCycle = event.target.value;
+	   	if(selectedLifeCycle != "") {
+	   		Session.set("selectedLifeCycle", selectedLifeCycle);
+    		Session.set("hideGallery", false);
+	   	} else {
+	   		Session.set("selectedProject", null);
+    		Session.set("hideLifeCyclePicker", true);
+    		Session.set("selectedLifeCycle", null);
+    		Session.set("hideGallery", true);
 	   	}
     	
 	}
+
+
 
 });

@@ -48,17 +48,46 @@ Template.catalog.helpers({
 
 Template.form.helpers({
 
-	'projects': function() {
-		return Projects.find( {"seasonName": {$exists: true, $ne: ""}} );
-	},
-
 	'hideLifeCyclePicker': function() {
 		return Session.get("hideLifeCyclePicker");
+	},
+
+	'hideGallery': function() {
+		return Session.get("hideGallery");
+	},
+
+	'projects': function() {
+		return Projects.find({
+			"seasonName": {$exists: true, $ne: ""}
+		});
 	},
 
 	'filteredProjectsBySeasonName': function() {
 		var selectedProject = Session.get("selectedProject");
 		return Projects.find( {"seasonName": selectedProject} );
+	}
+
+});
+
+Template.gallery.helpers({
+
+	'projectsBySeasonNameAndLifeCycle': function() {
+		var selectedProject = Session.get("selectedProject");
+		var selectedLifeCycle = Session.get("selectedLifeCycle");
+		var projects = Projects.find( {
+			"seasonName": selectedProject,
+			"lifeCycle": selectedLifeCycle
+		}).fetch();
+
+		var productKeys = [];
+		for(var i = 0; i < projects.length; i++) {
+			productKeys.push(projects[i].productID);
+		}
+
+		return Products.find({
+			"_id": {$in: productKeys}
+		});
+
 	}
 
 });
