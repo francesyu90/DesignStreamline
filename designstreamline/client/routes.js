@@ -59,3 +59,20 @@ Router.route("/projectCatalog",function (){
 	});
 });
 
+Router.route("/product/:id",function (){
+	this.render("navbar",{
+		to:"navbar"
+	});
+	this.render("product",{
+		to:"main",
+		data: function() {
+			var product = Products.findOne({_id:this.params.id});
+			return product;
+		}
+	});
+	this.render("footer",{
+		to:"footer"
+	});
+});
+
+

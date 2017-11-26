@@ -91,3 +91,4 @@ Template.gallery.helpers({
 	}
 
 });
+
