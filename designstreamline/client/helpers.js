@@ -103,7 +103,7 @@ Template.createProduct.helpers({
 	},
 
 	'components': function() {
-		return Components.find({});
+		return Components.find();
 	},
 
 	'risks': function() {
