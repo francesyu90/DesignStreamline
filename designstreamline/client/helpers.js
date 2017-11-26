@@ -71,7 +71,7 @@ Template.form.helpers({
 
 Template.gallery.helpers({
 
-	'projectsBySeasonNameAndLifeCycle': function() {
+	'productsBySeasonNameAndLifeCycle': function() {
 		var selectedProject = Session.get("selectedProject");
 		var selectedLifeCycle = Session.get("selectedLifeCycle");
 		var project = Projects.findOne( {
