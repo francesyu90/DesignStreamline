@@ -23,6 +23,18 @@ Router.route("/create",function (){
 	});
 });
 
+Router.route("/catalog",function (){
+	this.render("navbar",{
+		to:"navbar"
+	});
+	this.render("catalog",{
+		to:"main"
+	});
+	this.render("footer",{
+		to:"footer"
+	});
+});
+
 Router.route("/search",function (){
 	this.render("navbar",{
 		to:"navbar"
