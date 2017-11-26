@@ -105,3 +105,24 @@ Template.form.events({
 
 
 });
+
+Template.pill.events({
+
+	'click .nav-item'(event, instance) {
+		console.log(event.target);
+		$(this).addClass('active')
+		$(this).siblings.removeClass('active');
+	}
+
+});
+
+Template.navbar.events({
+
+	'click .nav-item'(event, instance) {
+		if(!$(this).hasClass('active')) {
+			$(this).addClass('active');
+			$(this).siblings.removeClass('active');
+		} 
+	}
+
+});
