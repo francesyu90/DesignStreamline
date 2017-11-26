@@ -50,7 +50,23 @@
 
 
 <template name="createComponent">
-  Component
+ <form class="createComponent">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+    </div>
+  </div>
+ <div class="form-group">
+      <label for="imageUrl">Image Url</label>
+      <textarea class="form-control" id="imageUrl" rows="3" placeholder="Place image url here... "></textarea>
+    </div>
+  <div class="form-group">
+    <label for="componentImage">Upload Design</label>
+    <input type="file" class="form-control-file" id="componentImage" disabled>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Component</button>
+</form>
 </template>
 
 <template name="createProduct">
