@@ -92,3 +92,18 @@ Template.gallery.helpers({
 
 });
 
+Template.createComponent.helpers({
+
+	'risks': function() {
+		var risks = ["low", "middle", "high"];
+		var riskObjs = [];
+		for(var i = 0; i < risks.length; i++) {
+			var risk = {
+				"level": risks[i]
+			}
+			riskObjs.push(risk);
+		}
+		return riskObjs;
+	}
+});
+

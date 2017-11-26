@@ -20,21 +20,25 @@
 
     <div class="col-md-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Component</a>
-  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Product</a>
-  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Project</a>
+  <a class="nav-link active" id="v-pills-component-tab" data-toggle="pill" href="#v-pills-component" role="tab" aria-controls="v-pills-component" aria-selected="true">Component</a>
+  <a class="nav-link" id="v-pills-feature-tab" data-toggle="pill" href="#v-pills-feature" role="tab" aria-controls="v-pills-feature" aria-selected="false">Feature</a>
+  <a class="nav-link" id="v-pills-product-tab" data-toggle="pill" href="#v-pills-product" role="tab" aria-controls="v-pills-product" aria-selected="false">Product</a>
+  <a class="nav-link" id="v-pills-project-tab" data-toggle="pill" href="#v-pills-project" role="tab" aria-controls="v-pills-project" aria-selected="false">Project</a>
 </div>
     </div>
 
     <div class="col-md-9">
       <div class="tab-content" id="v-pills-tabContent">
-  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  <div class="tab-pane fade show active" id="v-pills-component" role="tabpanel" aria-labelledby="v-pills-component-tab">
     {{> createComponent}}
   </div>
-  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+  <div class="tab-pane fade" id="v-pills-feature" role="tabpanel" aria-labelledby="v-pills-feature-tab">
+    {{> createFeature}}
+  </div>
+  <div class="tab-pane fade" id="v-pills-product" role="tabpanel" aria-labelledby="v-pills-product-tab">
     {{> createProduct}}
   </div>
-  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+  <div class="tab-pane fade" id="v-pills-project" role="tabpanel" aria-labelledby="v-pills-project-tab">
     {{> createProject}}
   </div>
 </div>
@@ -50,22 +54,43 @@
 
 
 <template name="createComponent">
- <form class="createComponent">
+ <form class="js-create-component">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+      <label for="componentName">Name</label>
+      <input type="text" class="form-control" id="componentName" placeholder="Name" name="componentName">
     </div>
   </div>
  <div class="form-group">
       <label for="imageUrl">Image Url</label>
       <textarea class="form-control" id="imageUrl" rows="3" placeholder="Place image url here... "></textarea>
     </div>
+    <div class="form-group">
+    <label for="riskPicker">Risk</label>
+    <select class="form-control" id="riskPicker" name="riskPicker">
+      <option value="">Choose... </option>
+      {{#each risks}}
+        <option value="{{ level }}">{{ level }}</option>
+      {{/each}}
+    </select>
+  </div>
   <div class="form-group">
     <label for="componentImage">Upload Design</label>
     <input type="file" class="form-control-file" id="componentImage" disabled>
   </div>
   <button type="submit" class="btn btn-primary">Create Component</button>
+</form>
+</template>
+
+<template name="createFeature">
+  <form class="js-create-feature">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="featureName">Feature Name</label>
+      <input type="text" class="form-control" id="featureName" placeholder="Name">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Feature</button>
 </form>
 </template>
 
