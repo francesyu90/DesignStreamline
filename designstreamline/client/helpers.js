@@ -54,6 +54,11 @@ Template.form.helpers({
 
 	'hideLifeCyclePicker': function() {
 		return Session.get("hideLifeCyclePicker");
+	},
+
+	'filteredProjectsBySeasonName': function() {
+		var selectedProject = Session.get("selectedProject");
+		return Projects.find( {"seasonName": selectedProject} );
 	}
 
 });

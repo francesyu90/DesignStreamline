@@ -29,9 +29,9 @@
       <label for="lifeCyclePicker">Life Cycle</label>
       <select id="lifeCyclePicker" class="form-control">
         <option selected>Choose...</option>
-        <option>I</option>
-        <option>II</option>
-        <option>III</option>
+        {{#each filteredProjectsBySeasonName}}
+        	 <option value="{{ _id }}">{{ lifeCycle }}</option>
+		{{/each}}
       </select>
     </div>
   </div>
