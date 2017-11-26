@@ -80,7 +80,6 @@ Template.createComponent.events({
 	},
 
 	'submit .js-create-component'(event, instance) {
-		event.preventDefault();
 		var componentName = event.target.componentName.value;
 		var imageUrl = event.target.imageUrl.value;
 		var componentRiskValue = Session.get("componentRiskValue");
@@ -96,3 +95,67 @@ Template.createComponent.events({
 	}
 
 });
+
+
+Template.createProduct.events({
+
+	'change #featureMulPicker'(event, instance) {
+		var selectedFeatures = event.target.value;
+		Session.set("selectedFeatureIDs", selectedFeatures);
+	},
+
+	'change #componentMulPicker'(event, instance) {
+		var selectedComponents = event.target.value;
+		Session.set("selectedComponentIDs", selectedComponents);
+	},
+
+	'change #productRiskPicker'(event, instance) {
+		var productRiskValue = event.target.value;
+		Session.set("productRiskValue", productRiskValue);
+	},
+
+	'submit .js-create-product'(event, instance) {
+		var productName = event.target.productName.value;
+		var productImageUrl = event.target.productImageUrl.value;
+		var selectedFeatureIDs = Session.get("selectedFeatureIDs");
+		var selectedComponentIDs = Session.get("selectedComponentIDs");
+		var productRiskValue = Session.get("productRiskValue");
+		var product = {
+			"name": productName,
+			"url": productImageUrl,
+			"featureIDs": selectedFeatureIDs,
+			"componentIDs": selectedComponentIDs,
+			"risk": productRiskValue
+		}
+		var productID = Products.insert(product);
+		if(productID) {
+			alert("Product " + productName + " successfully inserted!");
+		}
+	}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
