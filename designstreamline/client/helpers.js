@@ -24,11 +24,20 @@ Template.catalog.helpers({
 		var products = [];
 		for(var i = 0; i < productList.length; i++) {
 
+			var prod = productList[i];
+			var componentId = prod.componentID;
+			var featureId = prod.featureID;
+
+			var component = Components.findOne({"_id": componentId});
+			var feature = Features.findOne({"_id": featureId});
+
 			var product = {
-				"productName": productList[i].productName,
-				"_id": productList[i]._id,
-				"componentName": Components.findOne({"_id": productList[i].componentID}).componentName,
-				"featureName": Features.findOne({"_id": productList[i].featureID}).featureName
+				"productName": prod.productName,
+				"productID": prod._id,
+				"featureID": featureId,
+				"componentID": componentId,
+				"componentName": component != undefined ? component.componentName : "NA",
+				"featureName": feature != undefined ? feature.featureName : "NA"
 			}
 			products.push(product);
 		}

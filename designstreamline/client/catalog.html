@@ -14,10 +14,10 @@
   <tbody>
   	{{#each productList}}
    		<tr>
-   			<td>{{ _id }}</td>
-    		<td>{{ productName }}</td>
-    		<td>{{ featureName }}</td>
-    		<td>{{ componentName }}</td>
+   			<td>{{ productID }}</td>
+    		<td id="{{ productID }}">{{ productName }}</td>
+    		<td id="{{ featureID }}">{{ featureName }}</td>
+    		<td id="{{ componentID }}">{{ componentName }}</td>
     	</tr>
     {{/each}}
   </tbody>
