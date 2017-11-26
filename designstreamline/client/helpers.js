@@ -151,6 +151,22 @@ Template.productDetails.helpers({
 
 });
 
+Template.components.helpers({
+
+	'components': function() {
+		if(!Session.get("selectedProduct")) {
+			return;
+		}
+		var componentIDs = Session.get("selectedProduct").componentIDs;
+		if(!componentIDs) 
+			return;
+		return Features.find({
+			"_id": {$in: Object.values(componentIDs)}
+		});
+	}
+
+});
+
 var getLifeCycles = function() {
 	var lifeCycles = ["Design", "Development", "Production"];
 	var lifeCycleValues = ["des", "dev", "prod"];
