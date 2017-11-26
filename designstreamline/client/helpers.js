@@ -74,15 +74,12 @@ Template.gallery.helpers({
 	'projectsBySeasonNameAndLifeCycle': function() {
 		var selectedProject = Session.get("selectedProject");
 		var selectedLifeCycle = Session.get("selectedLifeCycle");
-		var projects = Projects.find( {
+		var project = Projects.findOne( {
 			"seasonName": selectedProject,
 			"lifeCycle": selectedLifeCycle
-		}).fetch();
+		});
 
-		var productKeys = [];
-		for(var i = 0; i < projects.length; i++) {
-			productKeys.push(projects[i].productID);
-		}
+		var productKeys = project.productIDs;
 
 		return Products.find({
 			"_id": {$in: productKeys}
