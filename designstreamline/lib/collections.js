@@ -11,7 +11,7 @@ Products = new Mongo.Collection("products");
 	-	
 */
 
-// Features = new Mongo.Collection("features");
+Features = new Mongo.Collection("features");
 
 Components = new Mongo.Collection("components");
 

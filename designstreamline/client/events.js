@@ -56,3 +56,19 @@ Template.navbar.events({
 	}
 
 });
+
+Template.createFeature.events({
+
+	'submit .js-create-feature'(event, instance) {
+		event.preventDefault();
+		var featureName = event.target.featureName.value;
+		var feature = {
+			"name": featureName
+		}
+		var featureID = Features.insert(feature);
+		if(featureID) {
+			alert("Feature " + featureName + " successfully inserted!");
+		}
+	}
+
+});
