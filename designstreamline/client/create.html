@@ -68,7 +68,7 @@
     </div>
 </div>
     <div class="form-row">
-      <div class="form-group col-md-10">
+      <div class="form-group col-md-3">
     <label for="riskPicker">Risk</label>
     <select class="form-control" id="riskPicker" name="riskPicker">
       <option value="">Choose... </option>
@@ -119,11 +119,34 @@
     <label for="featureMulPicker">Features</label>
     <select multiple class="form-control" id="featureMulPicker">
       <option value="">Choose...</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      {{#each features}}
+        <option value="{{ _id }}">{{ name }}</option>
+      {{/each}}
     </select>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="componentMulPicker">Components</label>
+    <select multiple class="form-control" id="componentMulPicker">
+      <option value="">Choose...</option>
+      {{#each components}}
+        <option value="{{ _id }}">{{ name }}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="productRiskPicker">Risk</label>
+    <select class="form-control" id="productRiskPicker" name="productRiskPicker">
+      <option value="">Choose... </option>
+      {{#each risks}}
+        <option value="{{ level }}">{{ level }}</option>
+      {{/each}}
+    </select>
+  </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-10">
+    <label for="productImage">Upload Design</label>
+    <input type="file" class="form-control-file" id="productImage" disabled>
   </div>
   </div>
   <button type="submit" class="btn btn-primary">Create Product</button>

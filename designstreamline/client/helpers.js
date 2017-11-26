@@ -95,7 +95,28 @@ Template.gallery.helpers({
 Template.createComponent.helpers({
 
 	'risks': function() {
-		var risks = ["low", "middle", "high"];
+		return getRisks();
+	}
+});
+
+Template.createProduct.helpers({
+
+	'features': function() {
+		return Features.find({});
+	},
+
+	'components': function() {
+		return Components.find({});
+	},
+
+	'risks': function() {
+		return getRisks();
+	}
+
+});
+
+var getRisks = function() {
+	var risks = ["low", "middle", "high"];
 		var riskObjs = [];
 		for(var i = 0; i < risks.length; i++) {
 			var risk = {
@@ -104,6 +125,5 @@ Template.createComponent.helpers({
 			riskObjs.push(risk);
 		}
 		return riskObjs;
-	}
-});
+}
 
