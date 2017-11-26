@@ -46,15 +46,6 @@ Template.pill.events({
 
 });
 
-Template.navbar.events({
-
-	'click .nav-item'(event, instance) {
-		$(".nav-item").removeClass('active');
-		$(this).addClass('active');
-	}
-
-});
-
 Template.createFeature.events({
 
 	'submit .js-create-feature'(event, instance) {

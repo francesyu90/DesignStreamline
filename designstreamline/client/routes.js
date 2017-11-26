@@ -67,6 +67,7 @@ Router.route("/product/:id",function (){
 		to:"main",
 		data: function() {
 			var product = Products.findOne({_id:this.params.id});
+			Session.set("selectedProduct", product);
 			return product;
 		}
 	});

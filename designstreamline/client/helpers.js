@@ -131,6 +131,26 @@ Template.createProject.helpers({
 
 });
 
+Template.productDetails.helpers({
+
+	'defaultRisk': function() {
+		return getRisks()[0];
+	},
+
+	'features': function() {
+		if(!Session.get("selectedProduct")) {
+			return;
+		}
+		var featureIDs = Session.get("selectedProduct").featureIDs;
+		if(!featureIDs) 
+			return;
+		return Features.find({
+			"_id": {$in: Object.values(featureIDs)}
+		});
+	}
+
+});
+
 var getLifeCycles = function() {
 	var lifeCycles = ["Design", "Development", "Production"];
 	var lifeCycleValues = ["des", "dev", "prod"];

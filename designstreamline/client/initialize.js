@@ -12,3 +12,5 @@ Session.set("productRiskValue", null);
 Session.set("selectedProductIDs", null);
 Session.set("selectedLifeCycleI", null);
 Session.set("projectRiskValue", null);
+
+Session.set("selectedProduct", null);
